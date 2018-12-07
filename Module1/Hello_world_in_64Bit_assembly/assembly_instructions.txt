@@ -1,0 +1,12 @@
+Have to include the -O0 switch to prevent optimization
+nasm -f elf64 -O0 helloworld.asm -o helloworld.o
+
+Check to verify that rax, etc. are used rather than eax.  If eax, then nasm optimized.
+objdump -d helloworld.o
+
+The -A switch sets architecture type
+ld -A elf64-x86-64 helloworld.o -o helloworld
+
+Verify again
+objdump -d helloworld
+
