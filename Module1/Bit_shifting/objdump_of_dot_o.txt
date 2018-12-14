@@ -1,0 +1,29 @@
+
+BitShifting-64.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+   5:	48 c1 e0 20          	shl    $0x20,%rax
+   9:	48 d1 e0             	shl    %rax
+   c:	f8                   	clc    
+   d:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  12:	48 d1 e8             	shr    %rax
+  15:	48 c1 e8 1f          	shr    $0x1f,%rax
+  19:	f8                   	clc    
+  1a:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  1f:	48 d1 f8             	sar    %rax
+  22:	f8                   	clc    
+  23:	48 c7 c0 ff ff ff ff 	mov    $0xffffffffffffffff,%rax
+  2a:	48 d1 f8             	sar    %rax
+  2d:	f8                   	clc    
+  2e:	48 b8 ef cd ab 89 67 	movabs $0x123456789abcdef,%rax
+  35:	45 23 01 
+  38:	48 c1 c8 08          	ror    $0x8,%rax
+  3c:	48 c1 c8 0c          	ror    $0xc,%rax
+  40:	48 c1 c8 2c          	ror    $0x2c,%rax
+  44:	b8 3c 00 00 00       	mov    $0x3c,%eax
+  49:	bf 00 00 00 00       	mov    $0x0,%edi
+  4e:	0f 05                	syscall 
