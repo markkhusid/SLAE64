@@ -1,0 +1,35 @@
+
+Strings-64.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	fc                   	cld    
+   1:	48 8d 34 25 00 00 00 	lea    0x0,%rsi
+   8:	00 
+   9:	48 8d 3c 25 00 00 00 	lea    0x0,%rdi
+  10:	00 
+  11:	48 a5                	movsq  %ds:(%rsi),%es:(%rdi)
+  13:	fc                   	cld    
+  14:	48 8d 34 25 00 00 00 	lea    0x0,%rsi
+  1b:	00 
+  1c:	48 31 c0             	xor    %rax,%rax
+  1f:	48 89 04 25 00 00 00 	mov    %rax,0x0
+  26:	00 
+  27:	48 8d 3c 25 00 00 00 	lea    0x0,%rdi
+  2e:	00 
+  2f:	b9 0b 00 00 00       	mov    $0xb,%ecx
+  34:	f3 a4                	rep movsb %ds:(%rsi),%es:(%rdi)
+  36:	48 b8 ef cd ab 89 67 	movabs $0x123456789abcdef,%rax
+  3d:	45 23 01 
+  40:	48 8d 3c 25 00 00 00 	lea    0x0,%rdi
+  47:	00 
+  48:	48 ab                	stos   %rax,%es:(%rdi)
+  4a:	48 31 c0             	xor    %rax,%rax
+  4d:	48 8d 34 25 00 00 00 	lea    0x0,%rsi
+  54:	00 
+  55:	48 ad                	lods   %ds:(%rsi),%rax
+  57:	b8 3c 00 00 00       	mov    $0x3c,%eax
+  5c:	bf 00 00 00 00       	mov    $0x0,%edi
+  61:	0f 05                	syscall 
