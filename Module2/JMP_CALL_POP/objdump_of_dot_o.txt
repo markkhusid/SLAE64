@@ -1,0 +1,41 @@
+
+helloworld_shellcode.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	eb 1e                	jmp    20 <call_shellcode>
+
+0000000000000002 <shellcode>:
+   2:	5e                   	pop    rsi
+   3:	48 31 c0             	xor    rax,rax
+   6:	b0 01                	mov    al,0x1
+   8:	48 89 c7             	mov    rdi,rax
+   b:	48 89 fa             	mov    rdx,rdi
+   e:	48 83 c2 22          	add    rdx,0x22
+  12:	0f 05                	syscall 
+  14:	48 31 c0             	xor    rax,rax
+  17:	48 83 c0 3c          	add    rax,0x3c
+  1b:	48 31 ff             	xor    rdi,rdi
+  1e:	0f 05                	syscall 
+
+0000000000000020 <call_shellcode>:
+  20:	e8 dd ff ff ff       	call   2 <shellcode>
+
+0000000000000025 <hello_world>:
+  25:	48                   	rex.W
+  26:	65 6c                	gs ins BYTE PTR es:[rdi],dx
+  28:	6c                   	ins    BYTE PTR es:[rdi],dx
+  29:	6f                   	outs   dx,DWORD PTR ds:[rsi]
+  2a:	20 57 6f             	and    BYTE PTR [rdi+0x6f],dl
+  2d:	72 6c                	jb     9b <hello_world+0x76>
+  2f:	64 20 74 6f 20       	and    BYTE PTR fs:[rdi+rbp*2+0x20],dh
+  34:	74 68                	je     9e <hello_world+0x79>
+  36:	65 20 53 4c          	and    BYTE PTR gs:[rbx+0x4c],dl
+  3a:	41                   	rex.B
+  3b:	45 2d 36 34 20 43    	rex.RB sub eax,0x43203436
+  41:	6f                   	outs   dx,DWORD PTR ds:[rsi]
+  42:	75 72                	jne    b6 <hello_world+0x91>
+  44:	73 65                	jae    ab <hello_world+0x86>
+  46:	0a                   	.byte 0xa

@@ -1,0 +1,41 @@
+
+helloworld_shellcode:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000401000 <_start>:
+  401000:	eb 1e                	jmp    401020 <call_shellcode>
+
+0000000000401002 <shellcode>:
+  401002:	5e                   	pop    rsi
+  401003:	48 31 c0             	xor    rax,rax
+  401006:	b0 01                	mov    al,0x1
+  401008:	48 89 c7             	mov    rdi,rax
+  40100b:	48 89 fa             	mov    rdx,rdi
+  40100e:	48 83 c2 22          	add    rdx,0x22
+  401012:	0f 05                	syscall 
+  401014:	48 31 c0             	xor    rax,rax
+  401017:	48 83 c0 3c          	add    rax,0x3c
+  40101b:	48 31 ff             	xor    rdi,rdi
+  40101e:	0f 05                	syscall 
+
+0000000000401020 <call_shellcode>:
+  401020:	e8 dd ff ff ff       	call   401002 <shellcode>
+
+0000000000401025 <hello_world>:
+  401025:	48                   	rex.W
+  401026:	65 6c                	gs ins BYTE PTR es:[rdi],dx
+  401028:	6c                   	ins    BYTE PTR es:[rdi],dx
+  401029:	6f                   	outs   dx,DWORD PTR ds:[rsi]
+  40102a:	20 57 6f             	and    BYTE PTR [rdi+0x6f],dl
+  40102d:	72 6c                	jb     40109b <hello_world+0x76>
+  40102f:	64 20 74 6f 20       	and    BYTE PTR fs:[rdi+rbp*2+0x20],dh
+  401034:	74 68                	je     40109e <hello_world+0x79>
+  401036:	65 20 53 4c          	and    BYTE PTR gs:[rbx+0x4c],dl
+  40103a:	41                   	rex.B
+  40103b:	45 2d 36 34 20 43    	rex.RB sub eax,0x43203436
+  401041:	6f                   	outs   dx,DWORD PTR ds:[rsi]
+  401042:	75 72                	jne    4010b6 <hello_world+0x91>
+  401044:	73 65                	jae    4010ab <hello_world+0x86>
+  401046:	0a                   	.byte 0xa
