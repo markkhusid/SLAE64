@@ -1,0 +1,29 @@
+
+Procedure2:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000401000 <HelloWorldProc>:
+  401000:	55                   	push   rbp
+  401001:	48 89 e5             	mov    rbp,rsp
+  401004:	b8 01 00 00 00       	mov    eax,0x1
+  401009:	bf 01 00 00 00       	mov    edi,0x1
+  40100e:	48 be 00 20 40 00 00 	movabs rsi,0x402000
+  401015:	00 00 00 
+  401018:	ba 0d 00 00 00       	mov    edx,0xd
+  40101d:	0f 05                	syscall 
+  40101f:	c9                   	leave  
+  401020:	c3                   	ret    
+
+0000000000401021 <_start>:
+  401021:	b9 10 00 00 00       	mov    ecx,0x10
+
+0000000000401026 <PrintHelloWorld>:
+  401026:	51                   	push   rcx
+  401027:	e8 d4 ff ff ff       	call   401000 <HelloWorldProc>
+  40102c:	59                   	pop    rcx
+  40102d:	e2 f7                	loop   401026 <PrintHelloWorld>
+  40102f:	b8 3c 00 00 00       	mov    eax,0x3c
+  401034:	bf 0b 00 00 00       	mov    edi,0xb
+  401039:	0f 05                	syscall 
