@@ -1,0 +1,51 @@
+
+MovingData-64.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	48 b8 bb bb bb bb aa 	movabs rax,0xaaaaaaaabbbbbbbb
+   7:	aa aa aa 
+   a:	b8 aa aa aa aa       	mov    eax,0xaaaaaaaa
+   f:	48 b8 bb bb bb bb aa 	movabs rax,0xaaaaaaaabbbbbbbb
+  16:	aa aa aa 
+  19:	b0 11                	mov    al,0x11
+  1b:	48 b8 bb bb bb bb aa 	movabs rax,0xaaaaaaaabbbbbbbb
+  22:	aa aa aa 
+  25:	b4 cc                	mov    ah,0xcc
+  27:	48 b8 bb bb bb bb aa 	movabs rax,0xaaaaaaaabbbbbbbb
+  2e:	aa aa aa 
+  31:	66 b8 dd dd          	mov    ax,0xdddd
+  35:	48 89 c5             	mov    rbp,rax
+  38:	49 89 ea             	mov    r10,rbp
+  3b:	45 89 d3             	mov    r11d,r10d
+  3e:	66 45 89 dc          	mov    r12w,r11w
+  42:	45 88 e5             	mov    r13b,r12b
+  45:	48 8b 34 25 00 00 00 	mov    rsi,QWORD PTR ds:0x0
+  4c:	00 
+  4d:	44 8b 34 25 00 00 00 	mov    r14d,DWORD PTR ds:0x0
+  54:	00 
+  55:	66 44 8b 3c 25 00 00 	mov    r15w,WORD PTR ds:0x0
+  5c:	00 00 
+  5e:	40 8a 3c 25 00 00 00 	mov    dil,BYTE PTR ds:0x0
+  65:	00 
+  66:	48 8b 04 25 00 00 00 	mov    rax,QWORD PTR ds:0x0
+  6d:	00 
+  6e:	88 04 25 00 00 00 00 	mov    BYTE PTR ds:0x0,al
+  75:	66 89 04 25 00 00 00 	mov    WORD PTR ds:0x0,ax
+  7c:	00 
+  7d:	89 04 25 00 00 00 00 	mov    DWORD PTR ds:0x0,eax
+  84:	48 89 04 25 00 00 00 	mov    QWORD PTR ds:0x0,rax
+  8b:	00 
+  8c:	48 8d 04 25 00 00 00 	lea    rax,ds:0x0
+  93:	00 
+  94:	48 8d 18             	lea    rbx,[rax]
+  97:	48 b8 ef cd ab 90 78 	movabs rax,0x1234567890abcdef
+  9e:	56 34 12 
+  a1:	48 bb 99 99 99 99 99 	movabs rbx,0x9999999999999999
+  a8:	99 99 99 
+  ab:	48 93                	xchg   rbx,rax
+  ad:	b8 3c 00 00 00       	mov    eax,0x3c
+  b2:	bf 00 00 00 00       	mov    edi,0x0
+  b7:	0f 05                	syscall 

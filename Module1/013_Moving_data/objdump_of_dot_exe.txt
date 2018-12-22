@@ -1,0 +1,51 @@
+
+MovingData-64:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000401000 <_start>:
+  401000:	48 b8 bb bb bb bb aa 	movabs rax,0xaaaaaaaabbbbbbbb
+  401007:	aa aa aa 
+  40100a:	b8 aa aa aa aa       	mov    eax,0xaaaaaaaa
+  40100f:	48 b8 bb bb bb bb aa 	movabs rax,0xaaaaaaaabbbbbbbb
+  401016:	aa aa aa 
+  401019:	b0 11                	mov    al,0x11
+  40101b:	48 b8 bb bb bb bb aa 	movabs rax,0xaaaaaaaabbbbbbbb
+  401022:	aa aa aa 
+  401025:	b4 cc                	mov    ah,0xcc
+  401027:	48 b8 bb bb bb bb aa 	movabs rax,0xaaaaaaaabbbbbbbb
+  40102e:	aa aa aa 
+  401031:	66 b8 dd dd          	mov    ax,0xdddd
+  401035:	48 89 c5             	mov    rbp,rax
+  401038:	49 89 ea             	mov    r10,rbp
+  40103b:	45 89 d3             	mov    r11d,r10d
+  40103e:	66 45 89 dc          	mov    r12w,r11w
+  401042:	45 88 e5             	mov    r13b,r12b
+  401045:	48 8b 34 25 08 20 40 	mov    rsi,QWORD PTR ds:0x402008
+  40104c:	00 
+  40104d:	44 8b 34 25 00 20 40 	mov    r14d,DWORD PTR ds:0x402000
+  401054:	00 
+  401055:	66 44 8b 3c 25 00 20 	mov    r15w,WORD PTR ds:0x402000
+  40105c:	40 00 
+  40105e:	40 8a 3c 25 00 20 40 	mov    dil,BYTE PTR ds:0x402000
+  401065:	00 
+  401066:	48 8b 04 25 08 20 40 	mov    rax,QWORD PTR ds:0x402008
+  40106d:	00 
+  40106e:	88 04 25 00 20 40 00 	mov    BYTE PTR ds:0x402000,al
+  401075:	66 89 04 25 00 20 40 	mov    WORD PTR ds:0x402000,ax
+  40107c:	00 
+  40107d:	89 04 25 00 20 40 00 	mov    DWORD PTR ds:0x402000,eax
+  401084:	48 89 04 25 00 20 40 	mov    QWORD PTR ds:0x402000,rax
+  40108b:	00 
+  40108c:	48 8d 04 25 00 20 40 	lea    rax,ds:0x402000
+  401093:	00 
+  401094:	48 8d 18             	lea    rbx,[rax]
+  401097:	48 b8 ef cd ab 90 78 	movabs rax,0x1234567890abcdef
+  40109e:	56 34 12 
+  4010a1:	48 bb 99 99 99 99 99 	movabs rbx,0x9999999999999999
+  4010a8:	99 99 99 
+  4010ab:	48 93                	xchg   rbx,rax
+  4010ad:	b8 3c 00 00 00       	mov    eax,0x3c
+  4010b2:	bf 00 00 00 00       	mov    edi,0x0
+  4010b7:	0f 05                	syscall 
