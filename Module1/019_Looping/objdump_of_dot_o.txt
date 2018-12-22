@@ -1,0 +1,22 @@
+
+Loop-64.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	b9 14 00 00 00       	mov    $0x14,%ecx
+
+0000000000000005 <PrintHW>:
+   5:	51                   	push   %rcx
+   6:	b8 01 00 00 00       	mov    $0x1,%eax
+   b:	bf 01 00 00 00       	mov    $0x1,%edi
+  10:	48 be 00 00 00 00 00 	movabs $0x0,%rsi
+  17:	00 00 00 
+  1a:	ba 0e 00 00 00       	mov    $0xe,%edx
+  1f:	0f 05                	syscall 
+  21:	59                   	pop    %rcx
+  22:	e2 e1                	loop   5 <PrintHW>
+  24:	b8 3c 00 00 00       	mov    $0x3c,%eax
+  29:	bf 0b 00 00 00       	mov    $0xb,%edi
+  2e:	0f 05                	syscall 
