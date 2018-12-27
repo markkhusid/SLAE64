@@ -1,0 +1,11 @@
+
+Exit_no_nulls.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	48 31 c0             	xor    rax,rax
+   3:	b0 3c                	mov    al,0x3c
+   5:	48 31 ff             	xor    rdi,rdi
+   8:	0f 05                	syscall 

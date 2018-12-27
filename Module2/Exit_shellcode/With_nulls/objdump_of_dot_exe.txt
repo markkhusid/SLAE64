@@ -1,0 +1,10 @@
+
+Exit:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000401000 <_start>:
+  401000:	b8 3c 00 00 00       	mov    $0x3c,%eax
+  401005:	bf 0b 00 00 00       	mov    $0xb,%edi
+  40100a:	0f 05                	syscall 

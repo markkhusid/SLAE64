@@ -1,0 +1,18 @@
+
+stack:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000401000 <_start>:
+  401000:	48 b8 88 77 66 55 44 	movabs rax,0x1122334455667788
+  401007:	33 22 11 
+  40100a:	50                   	push   rax
+  40100b:	68 00 20 40 00       	push   0x402000
+  401010:	ff 34 25 00 20 40 00 	push   QWORD PTR ds:0x402000
+  401017:	41 5f                	pop    r15
+  401019:	41 5e                	pop    r14
+  40101b:	5b                   	pop    rbx
+  40101c:	b8 3c 00 00 00       	mov    eax,0x3c
+  401021:	bf 00 00 00 00       	mov    edi,0x0
+  401026:	0f 05                	syscall 
