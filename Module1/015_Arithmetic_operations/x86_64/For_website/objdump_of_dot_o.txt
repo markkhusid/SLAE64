@@ -1,0 +1,36 @@
+
+arithmetic-64.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	b8 01 00 00 00       	mov    eax,0x1
+   5:	48 83 c0 01          	add    rax,0x1
+   9:	48 c7 c0 ff ff ff ff 	mov    rax,0xffffffffffffffff
+  10:	48 83 c0 01          	add    rax,0x1
+  14:	b8 09 00 00 00       	mov    eax,0x9
+  19:	48 83 e8 04          	sub    rax,0x4
+  1d:	48 8b 04 25 00 00 00 	mov    rax,QWORD PTR ds:0x0
+  24:	00 
+  25:	48 01 04 25 00 00 00 	add    QWORD PTR ds:0x0,rax
+  2c:	00 
+  2d:	48 83 04 25 00 00 00 	add    QWORD PTR ds:0x0,0x2
+  34:	00 02 
+  36:	f8                   	clc    
+  37:	f9                   	stc    
+  38:	f5                   	cmc    
+  39:	b8 00 00 00 00       	mov    eax,0x0
+  3e:	f9                   	stc    
+  3f:	48 83 d0 01          	adc    rax,0x1
+  43:	f9                   	stc    
+  44:	48 83 d0 02          	adc    rax,0x2
+  48:	b8 10 00 00 00       	mov    eax,0x10
+  4d:	48 83 e8 05          	sub    rax,0x5
+  51:	f9                   	stc    
+  52:	48 83 d8 04          	sbb    rax,0x4
+  56:	48 ff c0             	inc    rax
+  59:	48 ff c8             	dec    rax
+  5c:	b8 3c 00 00 00       	mov    eax,0x3c
+  61:	bf 00 00 00 00       	mov    edi,0x0
+  66:	0f 05                	syscall 
