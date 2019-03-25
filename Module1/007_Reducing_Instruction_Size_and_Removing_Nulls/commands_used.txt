@@ -1,0 +1,13 @@
+nasm -O0 -felf64 helloworld.nasm -o helloworld.o
+ld -A elf64-x86-64 helloworld.o -o helloworld
+
+nasm -O0 -felf64 helloworld-small1.nasm -o helloworld-small1.o
+ld -A elf64-x86-64 helloworld-small1.o -o helloworld-small1
+
+nasm -O0 -felf64 helloworld-shellcodesafe.nasm -o helloworld-shellcodesafe.o
+ld -A elf64-x86-64 helloworld-shellcodesafe.o -o helloworld-shellcodesafe
+
+objdump -M intel -d helloworld > objdump_of_exe_helloworld.txt
+objdump -M intel -d helloworld-small1 > objdump_of_exe_helloworld-small1.txt
+objdump -M intel -d helloworld-shellcodesafe > objdump_of_exe_helloworld-shellcodesafe.txt
+
