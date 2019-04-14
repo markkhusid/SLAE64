@@ -1,0 +1,26 @@
+<!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>global _start
+
+section <font color="#990000">.</font>text
+
+_start<font color="#990000">:</font>
+
+	<i><font color="#9A1900">; print on screen</font></i>
+	<b><font color="#0000FF">mov</font></b> rax<font color="#990000">,</font> <font color="#993399">1</font>
+	<b><font color="#0000FF">mov</font></b> rdi<font color="#990000">,</font> <font color="#993399">1</font>
+	<b><font color="#0000FF">mov</font></b> rsi<font color="#990000">,</font> hello_world
+	<b><font color="#0000FF">mov</font></b> rdx<font color="#990000">,</font> <b><font color="#0000FF">length</font></b>
+	syscall
+
+	<i><font color="#9A1900">; exit gracefully</font></i>
+	<b><font color="#0000FF">mov</font></b> rax<font color="#990000">,</font> <font color="#993399">60</font>
+	<b><font color="#0000FF">mov</font></b> rdi<font color="#990000">,</font> <font color="#993399">11</font>
+	syscall
+
+section <font color="#990000">.</font>data
+	hello_world<font color="#990000">:</font> <b><font color="#0000FF">db</font></b> <font color="#FF0000">'Hello World to the SLAE-64 Course'</font><font color="#990000">,</font><font color="#993399">0x0a</font>
+<b><font color="#000080">	length:</font></b> <b><font color="#0000FF">equ</font></b> $<font color="#990000">-</font>hello_world
+</tt></pre>
