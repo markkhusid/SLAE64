@@ -1,0 +1,5 @@
+nasm -O0 -felf64 datatypes.nasm -o datatypes.o
+ld -A elf64-x86-64 datatypes.o -o datatypes
+objdump -M intel -D datatypes.o > objdump_of_dot_o.txt
+objdump -M intel -D datatypes > objdump_of_dot_exe.txt
+

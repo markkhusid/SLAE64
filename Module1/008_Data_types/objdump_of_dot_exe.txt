@@ -1,0 +1,213 @@
+
+datatypes:     file format elf64-x86-64
+
+
+Disassembly of section .note.gnu.property:
+
+0000000000400120 <.note.gnu.property>:
+  400120:	04 00                	add    al,0x0
+  400122:	00 00                	add    BYTE PTR [rax],al
+  400124:	10 00                	adc    BYTE PTR [rax],al
+  400126:	00 00                	add    BYTE PTR [rax],al
+  400128:	05 00 00 00 47       	add    eax,0x47000000
+  40012d:	4e 55                	rex.WRX push rbp
+  40012f:	00 01                	add    BYTE PTR [rcx],al
+  400131:	00 00                	add    BYTE PTR [rax],al
+  400133:	c0 04 00 00          	rol    BYTE PTR [rax+rax*1],0x0
+  400137:	00 01                	add    BYTE PTR [rcx],al
+  400139:	00 00                	add    BYTE PTR [rax],al
+  40013b:	00 00                	add    BYTE PTR [rax],al
+  40013d:	00 00                	add    BYTE PTR [rax],al
+	...
+
+Disassembly of section .text:
+
+0000000000401000 <_start>:
+  401000:	48 b8 01 00 00 00 00 	movabs rax,0x1
+  401007:	00 00 00 
+  40100a:	48 bf 01 00 00 00 00 	movabs rdi,0x1
+  401011:	00 00 00 
+  401014:	48 be 00 20 40 00 00 	movabs rsi,0x402000
+  40101b:	00 00 00 
+  40101e:	48 ba 22 00 00 00 00 	movabs rdx,0x22
+  401025:	00 00 00 
+  401028:	0f 05                	syscall 
+  40102a:	48 b8 2a 20 40 00 00 	movabs rax,0x40202a
+  401031:	00 00 00 
+  401034:	48 8b 04 25 2a 20 40 	mov    rax,QWORD PTR ds:0x40202a
+  40103b:	00 
+  40103c:	48 b8 3c 00 00 00 00 	movabs rax,0x3c
+  401043:	00 00 00 
+  401046:	48 bf 0b 00 00 00 00 	movabs rdi,0xb
+  40104d:	00 00 00 
+  401050:	0f 05                	syscall 
+
+Disassembly of section .data:
+
+0000000000402000 <hello_world>:
+  402000:	48                   	rex.W
+  402001:	65 6c                	gs ins BYTE PTR es:[rdi],dx
+  402003:	6c                   	ins    BYTE PTR es:[rdi],dx
+  402004:	6f                   	outs   dx,DWORD PTR ds:[rsi]
+  402005:	20 57 6f             	and    BYTE PTR [rdi+0x6f],dl
+  402008:	72 6c                	jb     402076 <repeat_buffer+0x44>
+  40200a:	64 20 74 6f 20       	and    BYTE PTR fs:[rdi+rbp*2+0x20],dh
+  40200f:	74 68                	je     402079 <repeat_buffer+0x47>
+  402011:	65 20 53 4c          	and    BYTE PTR gs:[rbx+0x4c],dl
+  402015:	41                   	rex.B
+  402016:	45 2d 36 34 20 43    	rex.RB sub eax,0x43203436
+  40201c:	6f                   	outs   dx,DWORD PTR ds:[rsi]
+  40201d:	75 72                	jne    402091 <repeat_buffer+0x5f>
+  40201f:	73 65                	jae    402086 <repeat_buffer+0x54>
+  402021:	0a                 	or     dl,BYTE PTR [rcx]
+
+0000000000402022 <var1>:
+  402022:	11 22                	adc    DWORD PTR [rdx],esp
+
+0000000000402024 <var2>:
+  402024:	44 33              	xor    r11d,ebp
+
+0000000000402026 <var3>:
+  402026:	dd cc                	(bad)  
+  402028:	bb aa          	mov    ebx,0x223344aa
+
+000000000040202a <var4>:
+  40202a:	44 33 22             	xor    r12d,DWORD PTR [rdx]
+  40202d:	11 dd                	adc    ebp,ebx
+  40202f:	cc                   	int3   
+  402030:	bb aa          	mov    ebx,0xaaaaaaaa
+
+0000000000402032 <repeat_buffer>:
+  402032:	aa                   	stos   BYTE PTR es:[rdi],al
+  402033:	aa                   	stos   BYTE PTR es:[rdi],al
+  402034:	aa                   	stos   BYTE PTR es:[rdi],al
+  402035:	aa                   	stos   BYTE PTR es:[rdi],al
+  402036:	aa                   	stos   BYTE PTR es:[rdi],al
+  402037:	aa                   	stos   BYTE PTR es:[rdi],al
+  402038:	aa                   	stos   BYTE PTR es:[rdi],al
+  402039:	aa                   	stos   BYTE PTR es:[rdi],al
+  40203a:	aa                   	stos   BYTE PTR es:[rdi],al
+  40203b:	aa                   	stos   BYTE PTR es:[rdi],al
+  40203c:	aa                   	stos   BYTE PTR es:[rdi],al
+  40203d:	aa                   	stos   BYTE PTR es:[rdi],al
+  40203e:	aa                   	stos   BYTE PTR es:[rdi],al
+  40203f:	aa                   	stos   BYTE PTR es:[rdi],al
+  402040:	aa                   	stos   BYTE PTR es:[rdi],al
+  402041:	aa                   	stos   BYTE PTR es:[rdi],al
+  402042:	aa                   	stos   BYTE PTR es:[rdi],al
+  402043:	aa                   	stos   BYTE PTR es:[rdi],al
+  402044:	aa                   	stos   BYTE PTR es:[rdi],al
+  402045:	aa                   	stos   BYTE PTR es:[rdi],al
+  402046:	aa                   	stos   BYTE PTR es:[rdi],al
+  402047:	aa                   	stos   BYTE PTR es:[rdi],al
+  402048:	aa                   	stos   BYTE PTR es:[rdi],al
+  402049:	aa                   	stos   BYTE PTR es:[rdi],al
+  40204a:	aa                   	stos   BYTE PTR es:[rdi],al
+  40204b:	aa                   	stos   BYTE PTR es:[rdi],al
+  40204c:	aa                   	stos   BYTE PTR es:[rdi],al
+  40204d:	aa                   	stos   BYTE PTR es:[rdi],al
+  40204e:	aa                   	stos   BYTE PTR es:[rdi],al
+  40204f:	aa                   	stos   BYTE PTR es:[rdi],al
+  402050:	aa                   	stos   BYTE PTR es:[rdi],al
+  402051:	aa                   	stos   BYTE PTR es:[rdi],al
+  402052:	aa                   	stos   BYTE PTR es:[rdi],al
+  402053:	aa                   	stos   BYTE PTR es:[rdi],al
+  402054:	aa                   	stos   BYTE PTR es:[rdi],al
+  402055:	aa                   	stos   BYTE PTR es:[rdi],al
+  402056:	aa                   	stos   BYTE PTR es:[rdi],al
+  402057:	aa                   	stos   BYTE PTR es:[rdi],al
+  402058:	aa                   	stos   BYTE PTR es:[rdi],al
+  402059:	aa                   	stos   BYTE PTR es:[rdi],al
+  40205a:	aa                   	stos   BYTE PTR es:[rdi],al
+  40205b:	aa                   	stos   BYTE PTR es:[rdi],al
+  40205c:	aa                   	stos   BYTE PTR es:[rdi],al
+  40205d:	aa                   	stos   BYTE PTR es:[rdi],al
+  40205e:	aa                   	stos   BYTE PTR es:[rdi],al
+  40205f:	aa                   	stos   BYTE PTR es:[rdi],al
+  402060:	aa                   	stos   BYTE PTR es:[rdi],al
+  402061:	aa                   	stos   BYTE PTR es:[rdi],al
+  402062:	aa                   	stos   BYTE PTR es:[rdi],al
+  402063:	aa                   	stos   BYTE PTR es:[rdi],al
+  402064:	aa                   	stos   BYTE PTR es:[rdi],al
+  402065:	aa                   	stos   BYTE PTR es:[rdi],al
+  402066:	aa                   	stos   BYTE PTR es:[rdi],al
+  402067:	aa                   	stos   BYTE PTR es:[rdi],al
+  402068:	aa                   	stos   BYTE PTR es:[rdi],al
+  402069:	aa                   	stos   BYTE PTR es:[rdi],al
+  40206a:	aa                   	stos   BYTE PTR es:[rdi],al
+  40206b:	aa                   	stos   BYTE PTR es:[rdi],al
+  40206c:	aa                   	stos   BYTE PTR es:[rdi],al
+  40206d:	aa                   	stos   BYTE PTR es:[rdi],al
+  40206e:	aa                   	stos   BYTE PTR es:[rdi],al
+  40206f:	aa                   	stos   BYTE PTR es:[rdi],al
+  402070:	aa                   	stos   BYTE PTR es:[rdi],al
+  402071:	aa                   	stos   BYTE PTR es:[rdi],al
+  402072:	aa                   	stos   BYTE PTR es:[rdi],al
+  402073:	aa                   	stos   BYTE PTR es:[rdi],al
+  402074:	aa                   	stos   BYTE PTR es:[rdi],al
+  402075:	aa                   	stos   BYTE PTR es:[rdi],al
+  402076:	aa                   	stos   BYTE PTR es:[rdi],al
+  402077:	aa                   	stos   BYTE PTR es:[rdi],al
+  402078:	aa                   	stos   BYTE PTR es:[rdi],al
+  402079:	aa                   	stos   BYTE PTR es:[rdi],al
+  40207a:	aa                   	stos   BYTE PTR es:[rdi],al
+  40207b:	aa                   	stos   BYTE PTR es:[rdi],al
+  40207c:	aa                   	stos   BYTE PTR es:[rdi],al
+  40207d:	aa                   	stos   BYTE PTR es:[rdi],al
+  40207e:	aa                   	stos   BYTE PTR es:[rdi],al
+  40207f:	aa                   	stos   BYTE PTR es:[rdi],al
+  402080:	aa                   	stos   BYTE PTR es:[rdi],al
+  402081:	aa                   	stos   BYTE PTR es:[rdi],al
+  402082:	aa                   	stos   BYTE PTR es:[rdi],al
+  402083:	aa                   	stos   BYTE PTR es:[rdi],al
+  402084:	aa                   	stos   BYTE PTR es:[rdi],al
+  402085:	aa                   	stos   BYTE PTR es:[rdi],al
+  402086:	aa                   	stos   BYTE PTR es:[rdi],al
+  402087:	aa                   	stos   BYTE PTR es:[rdi],al
+  402088:	aa                   	stos   BYTE PTR es:[rdi],al
+  402089:	aa                   	stos   BYTE PTR es:[rdi],al
+  40208a:	aa                   	stos   BYTE PTR es:[rdi],al
+  40208b:	aa                   	stos   BYTE PTR es:[rdi],al
+  40208c:	aa                   	stos   BYTE PTR es:[rdi],al
+  40208d:	aa                   	stos   BYTE PTR es:[rdi],al
+  40208e:	aa                   	stos   BYTE PTR es:[rdi],al
+  40208f:	aa                   	stos   BYTE PTR es:[rdi],al
+  402090:	aa                   	stos   BYTE PTR es:[rdi],al
+  402091:	aa                   	stos   BYTE PTR es:[rdi],al
+  402092:	aa                   	stos   BYTE PTR es:[rdi],al
+  402093:	aa                   	stos   BYTE PTR es:[rdi],al
+  402094:	aa                   	stos   BYTE PTR es:[rdi],al
+  402095:	aa                   	stos   BYTE PTR es:[rdi],al
+  402096:	aa                   	stos   BYTE PTR es:[rdi],al
+  402097:	aa                   	stos   BYTE PTR es:[rdi],al
+  402098:	aa                   	stos   BYTE PTR es:[rdi],al
+  402099:	aa                   	stos   BYTE PTR es:[rdi],al
+  40209a:	aa                   	stos   BYTE PTR es:[rdi],al
+  40209b:	aa                   	stos   BYTE PTR es:[rdi],al
+  40209c:	aa                   	stos   BYTE PTR es:[rdi],al
+  40209d:	aa                   	stos   BYTE PTR es:[rdi],al
+  40209e:	aa                   	stos   BYTE PTR es:[rdi],al
+  40209f:	aa                   	stos   BYTE PTR es:[rdi],al
+  4020a0:	aa                   	stos   BYTE PTR es:[rdi],al
+  4020a1:	aa                   	stos   BYTE PTR es:[rdi],al
+  4020a2:	aa                   	stos   BYTE PTR es:[rdi],al
+  4020a3:	aa                   	stos   BYTE PTR es:[rdi],al
+  4020a4:	aa                   	stos   BYTE PTR es:[rdi],al
+  4020a5:	aa                   	stos   BYTE PTR es:[rdi],al
+  4020a6:	aa                   	stos   BYTE PTR es:[rdi],al
+  4020a7:	aa                   	stos   BYTE PTR es:[rdi],al
+  4020a8:	aa                   	stos   BYTE PTR es:[rdi],al
+  4020a9:	aa                   	stos   BYTE PTR es:[rdi],al
+  4020aa:	aa                   	stos   BYTE PTR es:[rdi],al
+  4020ab:	aa                   	stos   BYTE PTR es:[rdi],al
+  4020ac:	aa                   	stos   BYTE PTR es:[rdi],al
+  4020ad:	aa                   	stos   BYTE PTR es:[rdi],al
+  4020ae:	aa                   	stos   BYTE PTR es:[rdi],al
+  4020af:	aa                   	stos   BYTE PTR es:[rdi],al
+  4020b0:	aa                   	stos   BYTE PTR es:[rdi],al
+  4020b1:	aa                   	stos   BYTE PTR es:[rdi],al
+
+Disassembly of section .bss:
+
+00000000004020b4 <buffer>:
+	...
