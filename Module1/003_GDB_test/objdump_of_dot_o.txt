@@ -1,0 +1,205 @@
+
+gdb_test.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <main>:
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	push	rbp
+   0:	55                   	push   rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	mov	rbp, rsp
+   1:	48 89 e5             	mov    rbp,rsp
+	.cfi_def_cfa_register 6
+	sub	rsp, 32
+   4:	48 83 ec 20          	sub    rsp,0x20
+	mov	DWORD PTR -20[rbp], edi
+   8:	89 7d ec             	mov    DWORD PTR [rbp-0x14],edi
+	mov	QWORD PTR -32[rbp], rsi
+   b:	48 89 75 e0          	mov    QWORD PTR [rbp-0x20],rsi
+	lea	rax, .LC0[rip]
+   f:	48 8d 05 00 00 00 00 	lea    rax,[rip+0x0]        # 16 <main+0x16>
+	mov	QWORD PTR -8[rbp], rax
+  16:	48 89 45 f8          	mov    QWORD PTR [rbp-0x8],rax
+	mov	rax, QWORD PTR -32[rbp]
+  1a:	48 8b 45 e0          	mov    rax,QWORD PTR [rbp-0x20]
+	add	rax, 8
+  1e:	48 83 c0 08          	add    rax,0x8
+	mov	rax, QWORD PTR [rax]
+  22:	48 8b 00             	mov    rax,QWORD PTR [rax]
+	mov	rdx, QWORD PTR -8[rbp]
+  25:	48 8b 55 f8          	mov    rdx,QWORD PTR [rbp-0x8]
+	mov	rsi, rdx
+  29:	48 89 d6             	mov    rsi,rdx
+	mov	rdi, rax
+  2c:	48 89 c7             	mov    rdi,rax
+	call	strcmp@PLT
+  2f:	e8 00 00 00 00       	call   34 <main+0x34>
+	test	eax, eax
+  34:	85 c0                	test   eax,eax
+	jne	.L2
+  36:	75 0e                	jne    46 <main+0x46>
+	lea	rdi, .LC1[rip]
+  38:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 3f <main+0x3f>
+	call	puts@PLT
+  3f:	e8 00 00 00 00       	call   44 <main+0x44>
+	jmp	.L3
+  44:	eb 0c                	jmp    52 <main+0x52>
+.L2:
+	lea	rdi, .LC2[rip]
+  46:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 4d <main+0x4d>
+	call	puts@PLT
+  4d:	e8 00 00 00 00       	call   52 <main+0x52>
+.L3:
+	mov	eax, 0
+  52:	b8 00 00 00 00       	mov    eax,0x0
+	leave
+  57:	c9                   	leave  
+	.cfi_def_cfa 7, 8
+	ret
+  58:	c3                   	ret    
+Raw dump of debug contents of section .debug_line (loaded from gdb_test.o):
+
+  Offset:                      0x0
+  Length:                      81
+  DWARF Version:               3
+  Prologue Length:             33
+  Minimum Instruction Length:  1
+  Initial value of 'is_stmt':  1
+  Line Base:                   -5
+  Line Range:                  14
+  Opcode Base:                 13
+
+ Opcodes:
+  Opcode 1 has 0 args
+  Opcode 2 has 1 arg
+  Opcode 3 has 1 arg
+  Opcode 4 has 1 arg
+  Opcode 5 has 1 arg
+  Opcode 6 has 0 args
+  Opcode 7 has 0 args
+  Opcode 8 has 0 args
+  Opcode 9 has 1 arg
+  Opcode 10 has 0 args
+  Opcode 11 has 0 args
+  Opcode 12 has 1 arg
+
+ The Directory Table is empty.
+
+ The File Name Table (offset 0x1c):
+  Entry	Dir	Time	Size	Name
+  1	0	0	0	gdb_test.s
+
+ Line Number Statements:
+  [0x0000002b]  Extended opcode 2: set Address to 0x0
+  [0x00000036]  Advance Line by 18 to 19
+  [0x00000038]  Copy
+  [0x00000039]  Special opcode 22: advance Address by 1 to 0x1 and Line by 3 to 22
+  [0x0000003a]  Special opcode 49: advance Address by 3 to 0x4 and Line by 2 to 24
+  [0x0000003b]  Special opcode 62: advance Address by 4 to 0x8 and Line by 1 to 25
+  [0x0000003c]  Special opcode 48: advance Address by 3 to 0xb and Line by 1 to 26
+  [0x0000003d]  Special opcode 62: advance Address by 4 to 0xf and Line by 1 to 27
+  [0x0000003e]  Special opcode 104: advance Address by 7 to 0x16 and Line by 1 to 28
+  [0x0000003f]  Special opcode 62: advance Address by 4 to 0x1a and Line by 1 to 29
+  [0x00000040]  Special opcode 62: advance Address by 4 to 0x1e and Line by 1 to 30
+  [0x00000041]  Special opcode 62: advance Address by 4 to 0x22 and Line by 1 to 31
+  [0x00000042]  Special opcode 48: advance Address by 3 to 0x25 and Line by 1 to 32
+  [0x00000043]  Special opcode 62: advance Address by 4 to 0x29 and Line by 1 to 33
+  [0x00000044]  Special opcode 48: advance Address by 3 to 0x2c and Line by 1 to 34
+  [0x00000045]  Special opcode 48: advance Address by 3 to 0x2f and Line by 1 to 35
+  [0x00000046]  Special opcode 76: advance Address by 5 to 0x34 and Line by 1 to 36
+  [0x00000047]  Special opcode 34: advance Address by 2 to 0x36 and Line by 1 to 37
+  [0x00000048]  Special opcode 34: advance Address by 2 to 0x38 and Line by 1 to 38
+  [0x00000049]  Special opcode 104: advance Address by 7 to 0x3f and Line by 1 to 39
+  [0x0000004a]  Special opcode 76: advance Address by 5 to 0x44 and Line by 1 to 40
+  [0x0000004b]  Special opcode 35: advance Address by 2 to 0x46 and Line by 2 to 42
+  [0x0000004c]  Special opcode 104: advance Address by 7 to 0x4d and Line by 1 to 43
+  [0x0000004d]  Special opcode 77: advance Address by 5 to 0x52 and Line by 2 to 45
+  [0x0000004e]  Special opcode 76: advance Address by 5 to 0x57 and Line by 1 to 46
+  [0x0000004f]  Special opcode 21: advance Address by 1 to 0x58 and Line by 2 to 48
+  [0x00000050]  Advance PC by 1 to 0x59
+  [0x00000052]  Extended opcode 1: End of Sequence
+
+
+Contents of the .debug_info section (loaded from gdb_test.o):
+
+  Compilation Unit @ offset 0x0:
+   Length:        0x2a (32-bit)
+   Version:       2
+   Abbrev Offset: 0x0
+   Pointer Size:  8
+ <0><b>: Abbrev Number: 1 (DW_TAG_compile_unit)
+    <c>   DW_AT_stmt_list   : 0x0
+    <10>   DW_AT_low_pc      : 0x0
+    <18>   DW_AT_high_pc     : 0x59
+    <20>   DW_AT_name        : (indirect string, offset: 0x0): gdb_test.s
+    <24>   DW_AT_comp_dir    : (indirect string, offset: 0xb): /home/user/Documents/Engineering/SLAE64/Module1/003_GDB_test
+    <28>   DW_AT_producer    : (indirect string, offset: 0x48): GNU AS 2.35.1
+    <2c>   DW_AT_language    : 32769	(MIPS assembler)
+
+Contents of the .debug_abbrev section (loaded from gdb_test.o):
+
+  Number TAG (0x0)
+   1      DW_TAG_compile_unit    [no children]
+    DW_AT_stmt_list    DW_FORM_data4
+    DW_AT_low_pc       DW_FORM_addr
+    DW_AT_high_pc      DW_FORM_addr
+    DW_AT_name         DW_FORM_strp
+    DW_AT_comp_dir     DW_FORM_strp
+    DW_AT_producer     DW_FORM_strp
+    DW_AT_language     DW_FORM_data2
+    DW_AT value: 0     DW_FORM value: 0
+
+Contents of the .debug_aranges section (loaded from gdb_test.o):
+
+  Length:                   44
+  Version:                  2
+  Offset into .debug_info:  0x0
+  Pointer Size:             8
+  Segment Size:             0
+
+    Address            Length
+    0000000000000000 0000000000000059 
+    0000000000000000 0000000000000000 
+
+Contents of the .debug_str section (loaded from gdb_test.o):
+
+  0x00000000 6764625f 74657374 2e73002f 686f6d65 gdb_test.s./home
+  0x00000010 2f757365 722f446f 63756d65 6e74732f /user/Documents/
+  0x00000020 456e6769 6e656572 696e672f 534c4145 Engineering/SLAE
+  0x00000030 36342f4d 6f64756c 65312f30 30335f47 64/Module1/003_G
+  0x00000040 44425f74 65737400 474e5520 41532032 DB_test.GNU AS 2
+  0x00000050 2e33352e 3100                       .35.1.
+
+Contents of the .eh_frame section (loaded from gdb_test.o):
+
+
+00000000 0000000000000014 00000000 CIE
+  Version:               1
+  Augmentation:          "zR"
+  Code alignment factor: 1
+  Data alignment factor: -8
+  Return address column: 16
+  Augmentation data:     1b
+  DW_CFA_def_cfa: r7 (rsp) ofs 8
+  DW_CFA_offset: r16 (rip) at cfa-8
+  DW_CFA_nop
+  DW_CFA_nop
+
+00000018 000000000000001c 0000001c FDE cie=00000000 pc=0000000000000000..0000000000000059
+  DW_CFA_advance_loc: 1 to 0000000000000001
+  DW_CFA_def_cfa_offset: 16
+  DW_CFA_offset: r6 (rbp) at cfa-16
+  DW_CFA_advance_loc: 3 to 0000000000000004
+  DW_CFA_def_cfa_register: r6 (rbp)
+  DW_CFA_advance_loc1: 84 to 0000000000000058
+  DW_CFA_def_cfa: r7 (rsp) ofs 8
+  DW_CFA_nop
+  DW_CFA_nop
+

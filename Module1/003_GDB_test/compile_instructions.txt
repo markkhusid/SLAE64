@@ -1,0 +1,6 @@
+gcc -ggdb3 -S -masm=intel gdb_test.c -o gdb_test.s
+gcc -ggdb3 -c gdb_test.s -o gdb_test.o
+
+objdump -g -d -S -M intel gdb_test.o > objdump_of_dot_o.txt
+objdump -g -d -S -M intel gdb_test > objdump_of_dot_exe.txt
+
